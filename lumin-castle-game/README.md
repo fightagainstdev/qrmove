@@ -65,10 +65,21 @@ http://localhost:8000
 
 ## 故障排除
 
+### 端口占用错误
+如果遇到 "EADDRINUSE: address already in use :::8000" 错误：
+1. 停止所有node进程：`taskkill /f /im node.exe`
+2. 或者使用其他端口：`python -m http.server 3000`
+
+### CORS错误
 如果遇到CORS错误：
 1. 确保使用HTTP服务器而不是直接打开HTML文件
 2. 检查防火墙是否阻止了8000端口
 3. 尝试使用不同的端口：`python -m http.server 3000`
+
+### 游戏无法启动
+1. 确保已安装Node.js（推荐v14+）
+2. 检查8000端口是否被其他程序占用
+3. 尝试使用管理员权限运行
 
 ## 完整汉化内容
 

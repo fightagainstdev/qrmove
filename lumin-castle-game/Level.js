@@ -360,8 +360,8 @@ class LevelSelect extends Level {
         con.beginPath();
         const x = 0.5 * 960 /* Settings.SCREEN_WIDTH */; // .Inline(1)
         const y = this.boardTop + 8.5 * this.cellSize; // .Inline(1)
+        con.fillStyle = "#32CD32" /* 绿色 */;
         printCenter(x, y, 4, 'LUMIN由爱制造', 1, tOscillator);
-        con.fillStyle = "#73eff7" /* Palette.LEVELS_LINK */;
         con.fill();
         con.restore();
     }
