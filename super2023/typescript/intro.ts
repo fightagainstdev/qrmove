@@ -44,10 +44,10 @@ export function renderIntro(t: number, tOscillator: number) {
         con.fill()
 
         con.beginPath()
-        printCenter(left, top, 6, 'START', 1, tOscillator)
+        printCenter(left, top, 4, '开始', 1, tOscillator)
 
-        printCenter(right, top - 0.05 * Settings.SCREEN_HEIGHT, 6, 'START', 1, tOscillator)
-        printCenter(right, top + 0.05 * Settings.SCREEN_HEIGHT, 4, 'MUSIC OFF', 1, tOscillator)
+        printCenter(right, top - 0.05 * Settings.SCREEN_HEIGHT, 4, '开始', 1, tOscillator)
+        printCenter(right, top + 0.05 * Settings.SCREEN_HEIGHT, 3, '音乐关闭', 1, tOscillator)
         con.shadowColor = Palette.BUTTON_3
         con.fillStyle = Palette.BUTTON_2
         con.fill()

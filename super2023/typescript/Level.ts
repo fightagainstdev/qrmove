@@ -484,7 +484,7 @@ class LevelSelect extends Level {
         const y = this.boardTop + 8.5 * this.cellSize // .Inline(1)
         printCenter(x, y, 4, 'LUMIN由爱制造', 1, tOscillator)
 
-        con.fillStyle = Palette.LEVELS_LINK
+        con.fillStyle = '#FFD700' // 金色
         con.fill()
 
         con.restore()
@@ -496,6 +496,23 @@ class LevelSelect extends Level {
         con.shadowColor = Palette.NOTHING
         con.shadowOffsetX = con.shadowOffsetY = 3
 
+        // 关卡中文名称数组
+        const levelNames = [
+            '入门', '学习', '实践', '掌握', '挑战', '精通',
+            '尝试', '探索', '发现', '创新', '突破', '成功',
+            '进阶', '提升', '超越', '完美', '传奇', '大师',
+            '第一关', '第二关', '第三关', '第四关', '第五关', '第六关',
+            '第七关', '第八关', '第九关', '第十关', '第十一关', '第十二关',
+            '第十三关', '第十四关', '第十五关', '第十六关', '第十七关', '第十八关',
+            '第十九关', '第二十关', '第二十一关', '第二十二关', '第二十三关', '第二十四关',
+            '第二十五关', '第二十六关', '第二十七关', '第二十八关', '第二十九关', '第三十关',
+            '第三十一关', '第三十二关', '第三十三关', '第三十四关', '第三十五关', '第三十六关',
+            '第三十七关', '第三十八关', '第三十九关', '第四十关', '第四十一关', '第四十二关',
+            '第四十三关', '第四十四关', '第四十五关', '第四十六关', '第四十七关', '第四十八关',
+            '第四十九关', '第五十关', '第五十一关', '第五十二关', '第五十三关', '第五十四关',
+            '终极大挑战'
+        ]
+
         // In progress
         con.beginPath()
 
@@ -504,7 +521,7 @@ class LevelSelect extends Level {
 
             const x0 = this.boardLeft + (2 * (n % 6) + 2) * this.cellSize // .Inline(1)
             const y0 = this.boardTop + (2 * Math.floor(n / 6) + 2.5) * this.cellSize // .Inline(1)
-            const ch = String(n) // .Inline(1)
+            const ch = levelNames[n - 1] || String(n) // 使用中文名称，如果超出数组则使用数字
 
             printCenter(x0, y0 + 0.5 * Settings.LEVEL_SELECT_FONT_SIZE, Settings.LEVEL_SELECT_FONT_SIZE, ch, 0, 0)
         }
@@ -520,7 +537,7 @@ class LevelSelect extends Level {
 
             const x0 = this.boardLeft + (2 * (n % 6) + 2) * this.cellSize // .Inline(1)
             const y0 = this.boardTop + (2 * Math.floor(n / 6) + 2.5) * this.cellSize // .Inline(1)
-            const ch = String(n) // .Inline(1)
+            const ch = levelNames[n - 1] || String(n) // 使用中文名称，如果超出数组则使用数字
 
             printCenter(x0, y0 + 0.5 * Settings.LEVEL_SELECT_FONT_SIZE, Settings.LEVEL_SELECT_FONT_SIZE, ch, 0, 0)
         }
